@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Chat</title>
+        <link rel="stylesheet" href="/style.css">
+        <!-- npm i socket.io-client -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/script.js" defer></script>
+    </head>
+    <body>
+        <h1>Simple Chat</h1>
+        <p id="activeClientsText">יש 0 לקוחות פעילים כרגע</p>
+        <form id="profileForm" action="#">
+            <input id="username" placeholder="Username" autocomplete="off" />
+            <label for="color">Color:</label>
+            <input id="color" type="color" value="#000000" />
+            <button type="submit">Save</button>
+        </form>
+        <button id="disconnectBtn" type="button">התנתקות</button>
+        <ul id="messages"></ul>
+        <form id="form" action="#">
+            <input
+                id="input"
+                autocomplete="off"
+                placeholder="Type your message..." />
+            <button>Send</button>
+        </form>
+    </body>
+</html>
