@@ -41,15 +41,11 @@ export const createSocket = (httpServer) => {
             });
         });
 
-        socket.on('manual disconnect', () => {
+        socket.on('disconnect', () => {
             socket.broadcast.emit('client disconnected', {
                 username: socket.username || 'unknown',
                 color: socket.color || '#000000'
             });
-            socket.disconnect();
-        });
-
-        socket.on('disconnect', () => {
             activeClients = Math.max(0, activeClients - 1);
             io.emit('active clients updated', { count: activeClients });
         });

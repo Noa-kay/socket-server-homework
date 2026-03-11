@@ -44,7 +44,6 @@ form.addEventListener('submit', e => {
 });
 
 disconnectBtn.addEventListener('click', () => {
-    socket.emit('manual disconnect');
     socket.disconnect();
     disconnectBtn.disabled = true;
     input.disabled = true;
